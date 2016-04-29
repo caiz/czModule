@@ -1,0 +1,77 @@
+.cz-carousel {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+.cz-carousel .cz-carousel-ul {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  margin-left: 0px;
+}
+.cz-carousel .cz-carousel-ul li {
+  width: 100%;
+  height: auto;
+  display: block;
+  float: left;
+  position: relative;
+}
+.cz-carousel .cz-carousel-ul li img {
+  width: 100%;
+  float: left;
+}
+.cz-carousel .cz-carousel-ul li span {
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 99;
+  font-size: 1em;
+}
+.cz-carousel .cz-carousel-meow {
+  width: 52px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  bottom: 5px;
+  z-index: 100;
+}
+.cz-carousel .cz-carousel-meow li {
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: #FFFFFF;
+  opacity: .8;
+  float: left;
+  text-align: center;
+  -moz-border-radius: 50%;
+  /* Gecko browsers */
+  -webkit-border-radius: 50%;
+  /* Webkit browsers */
+  border-radius: 50%;
+  /* W3C syntax */
+  margin-right: 4px;
+  line-height: 15px;
+  cursor: pointer;
+}
+.cz-carousel .cz-carousel-meow li.active {
+  background-color: #000000;
+}
+.cz-carousel .cz-carousel-meow li:last-child {
+  margin-right: 0px;
+}
+.cz-carousel .cz-carousel-meow.left-side {
+  left: 5px;
+}
+.cz-carousel .cz-carousel-meow.right-side {
+  right: 5px;
+}
+.cz-carousel .cz-carousel-meow.center-side {
+  left: 50%;
+  margin-left: -25px;
+}

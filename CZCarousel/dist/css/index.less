@@ -1,0 +1,121 @@
+
+
+.border-radius (@radius) {
+  -moz-border-radius: @radius; /* Gecko browsers */
+  -webkit-border-radius: @radius; /* Webkit browsers */
+  border-radius: @radius; /* W3C syntax */
+}
+
+.border-radius (@radius1,@radius2) {
+  -moz-border-radius: @radius1 @radius2; /* Gecko browsers */
+  -webkit-border-radius: @radius1 @radius2; /* Webkit browsers */
+  border-radius: @radius1 @radius2; /* W3C syntax */
+}
+
+.border-radius (@radius1,@radius2,@radius3,@radius4) {
+  -moz-border-radius: @radius1 @radius2 @radius3 @radius4; /* Gecko browsers */
+  -webkit-border-radius: @radius1 @radius2 @radius3 @radius4; /* Webkit browsers */
+  border-radius: @radius1 @radius2 @radius3 @radius4; /* W3C syntax */
+}
+
+
+
+.cz-carousel {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  .cz-carousel-ul {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    margin-left: -0px;
+    li {
+      width: 100%;
+      height: auto;
+      display: block;
+      float: left;
+      position: relative;
+      img {
+        width: 100%;
+        float: left;
+      }
+
+      span {
+        width: 100%;
+        height: auto;
+        //background-color: #000000;
+        background: rgba(0,0,0,.5);  // 不兼容低版ie, 如需兼容低版ie需写两个span, 用background-color: #000000;opacity: .5;
+        color: #FFFFFF;
+        //opacity: .5;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        z-index: 99;
+        font-size: 1em;
+      }
+
+    }
+  }
+
+  .cz-carousel-meow {
+    width: 52px;
+    height: 10px;
+    display: block;
+    position: absolute;
+
+    bottom: 5px;
+    z-index: 100;
+    li {
+      width: 10px;
+      height: 10px;
+      display: block;
+      background-color: #FFFFFF;
+      opacity: .8;
+      float: left;
+      text-align: center;
+      .border-radius(50%);
+      margin-right: 4px;
+      line-height: 15px;
+      cursor: pointer;
+      &.active {
+        background-color: #000000;
+      }
+    }
+    li:last-child {
+      margin-right: 0px;
+    }
+
+    &.left-side {
+      left: 5px;
+    }
+    &.right-side {
+      right: 5px;
+    }
+    &.center-side {
+      left: 50%;
+      margin-left: -25px;
+    }
+  }
+}
+
+//.cz-btn {
+//  width: 100px;
+//  height: 40px;
+//  background-color: aqua;
+//  color: #FFFFFF;
+//  font-size: 1.3em;
+//  line-height: 40px;
+//  text-align: center;
+//  cursor: pointer;
+//}
+//
+//
+//.fadeLeft {
+//  -moz-transition: margin-left .5s ease-in;
+//  -webkit-transition: margin-left .5s ease-in;
+//  -o-transition: margin-left .5s ease-in;
+//  transition: margin-left .5s ease-in;
+//}
+

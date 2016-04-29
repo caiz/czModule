@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>CZCarousel</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/base.min.css" />
+    <link rel="stylesheet" type="text/css" href="dist/css/index.css" />
+</head>
+<body>
+    <!--<div id="parent_div" style="width: 100%;">-->
+        <div class="cz-carousel" id="carousel">
+            <ul class="cz-carousel-ul">
+                <li>
+                    <img src="dist/css/imgs/1.jpg">
+                    <span>这是第一张图的title</span>
+                </li>
+                <li>
+                    <img src="dist/css/imgs/2.jpg">
+                    <span>这是第二张图的title</span>
+                </li>
+                <li>
+                    <img src="dist/css/imgs/3.jpg">
+                    <span>这是第三张图的title</span>
+                </li>
+                <li>
+                    <img src="dist/css/imgs/4.jpg">
+                    <span>这是第四张图的title</span>
+                </li>
+            </ul>
+        </div>
+    <!--</div>-->
+
+</body>
+<script src="dist/css/js/jquery-2.0.3.min.js"></script>
+<script src="dist/css/js/CZCarousel.js"></script>
+<script type="text/javascript">
+
+    var czCarousel1 = new CZCarousel({
+        autoScrolling : true,
+        fitToSectionDelay: 3000,
+        elementId : 'carousel',
+        mouseOverPause : true,
+        meow : true,
+        meowPosition : 'right',
+        moveAnimate : 'default', // default, custom
+        customMoveAnimate : function(opt) {
+//            console.log(opt);
+            opt.el.setAttribute('style', 'width: ' + opt.uiWidth + 'px;transform:translateX(' + opt.moveWidth + 'px' + ');transition: transform .5s ease-in;');
+        },
+        onLeave : function(index){ // index 以0开始
+//            console.log('离开第' + (index + 1) + ' 页');
+//            return false;
+        },
+        afterLoad:function(index){ // index 以0开始
+//            console.log('到达第' + (index + 1) + ' 页');
+        }
+    });
+
+</script>
+</html>
