@@ -1,0 +1,89 @@
+@charset "utf-8";
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.cz-mark {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: .8;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.cz-text-align-left {
+  text-align: left;
+}
+.cz-text-align-right {
+  text-align: right;
+}
+.cz-text-align-center {
+  text-align: center;
+}
+.cz-dialog {
+  position: fixed;
+  width: 55%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: #FFFFFF;
+  -moz-border-radius: 15px;
+  /* Gecko browsers */
+  -webkit-border-radius: 15px;
+  /* Webkit browsers */
+  border-radius: 15px;
+  /* W3C syntax */
+  padding: 15px;
+}
+.cz-dialog .cz-dialog-header {
+  width: 100%;
+  height: auto;
+  font-size: 1.2em;
+  color: #000000;
+}
+.cz-dialog .cz-dialog-content {
+  width: 100%;
+  height: auto;
+  font-size: 1em;
+  color: #000000;
+  margin-top: 5px;
+}
+.cz-dialog .cz-dialog-button-row {
+  width: auto;
+  height: auto;
+  font-size: 1em;
+  color: #000000;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px #EEEEEE solid;
+  overflow: hidden;
+}
+.cz-dialog .cz-dialog-button-row .cz-btn {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  font-size: 1em;
+  margin-right: 30px;
+}
+.cz-dialog .cz-dialog-button-row .cz-btn:last-child {
+  margin-right: 0px;
+}
+@media screen and (min-width: 500px) and (max-width: 960px) {
+  .cz-dialog {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .cz-dialog {
+    width: 33%;
+  }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rootApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>dialog</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/index.css" />
+</head>
+<body>
+    <button onclick="openAlert()">alert</button>
+</body>
+<script src="dist/js/CZDialog.js"></script>
+<!--调用示例-->
+<script type="text/javascript">
+    var czDialog = new CZDialog({
+        contentAlign: 'center', // left right center
+        headerAlign: 'center', // left right center
+        buttonAlign: 'center' // left right center
+    });
+    function openAlert() {
+        czDialog.alert("你确定要这样操作吗?", "警告", [
+            {
+                text: '取消',  // 按钮名称
+                type: 'cancel',  // 按钮类型
+                autoClose: true,  // 是否点击完自动关闭 默认关闭
+                callBack: function(obj, btn){
+//                    console.log(obj);
+//                    console.log(btn);
+                }},
+            {
+                text: '确定',
+                type: 'confirm',
+                autoClose: false,
+                callBack: function(obj, btn){
+//                    console.log(obj);
+//                    console.log(btn);
+//                    czDialog.close();  // 关闭对话框
+                }}
+        ]);
+    }
+</script>
+</html>

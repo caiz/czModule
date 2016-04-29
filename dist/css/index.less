@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+.cz-translateX(@x){
+  -webkit-transform: translateX(@x);
+  -o-transform: translateX(@x);
+  -moz-transform: translateX(@x);
+  transform: translateX(@x);
+}
+.cz-translateY(@y){
+  -webkit-transform: translateY(@y);
+  -o-transform: translateY(@y);
+  -moz-transform: translateY(@y);
+  transform: translateY(@y);
+}
+.cz-translate(@x,@y){
+  -webkit-transform: translate(@x,@y);
+  -o-transform: translate(@x,@y);
+  -moz-transform: translate(@x,@y);
+  transform: translate(@x,@y);
+}
+.cz-transition(@property,@duration,@timing-function,@delay) {
+  -webkit-transition: @property @duration @timing-function @delay;
+  -o-transition: @property @duration @timing-function @delay;
+  -moz-transition: @property @duration @timing-function @delay;
+  transition: @property @duration @timing-function @delay;
+}
+.border-radius (@radius) {
+  -moz-border-radius: @radius; /* Gecko browsers */
+  -webkit-border-radius: @radius; /* Webkit browsers */
+  border-radius: @radius; /* W3C syntax */
+}
+
+html,body {
+  height: 100%;
+  width: 100%;
+}
+
+.cz-mark {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: .8;
+  z-index: 999;
+  position: fixed;
+  top:0;
+  left: 0;
+}
+
+.cz-text-align-left {
+  text-align: left;
+}
+
+.cz-text-align-right {
+  text-align: right;
+}
+
+.cz-text-align-center {
+  text-align: center;
+}
+
+.cz-dialog {
+  position: fixed;
+  width: 55%;
+  height: auto;
+  top:50%;
+  left: 50%;
+  .cz-translate(-50%,-50%);
+  z-index: 1000;
+  background-color: #FFFFFF;
+  .border-radius(15px);
+  //border: 1px #000000 solid;
+  padding: 15px;
+
+  .cz-dialog-header {
+    width: 100%;
+    height: auto;
+    //border-bottom: 1px #EEEEEE solid;
+    font-size: 1.2em;
+    color: #000000;
+  }
+
+  .cz-dialog-content {
+    width: 100%;
+    height: auto;
+    font-size: 1em;
+    color: #000000;
+    margin-top: 5px;
+  }
+
+  .cz-dialog-button-row {
+    width: auto;
+    height: auto;
+    font-size: 1em;
+    color: #000000;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px #EEEEEE solid;
+    overflow: hidden;
+
+    .cz-btn {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      font-size: 1em;
+      margin-right: 30px;
+    }
+    .cz-btn:last-child {
+      margin-right: 0px;
+    }
+
+  }
+
+}
+
+@media screen and (min-width : 500px) and (max-width : 960px){
+  .cz-dialog {
+    width: 45%;
+  }
+}
+
+
+@media screen and (min-width : 960px) {
+  .cz-dialog {
+    width: 33%;
+  }
+}
