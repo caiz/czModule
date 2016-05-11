@@ -4,6 +4,7 @@
 
 function CZDialog(options){
     this.settings = options;
+    var that = this;
     var body = document.body;
     this.alert = function(content, title, btnOptions){
         // 创建遮罩层
@@ -36,7 +37,7 @@ function CZDialog(options){
     function createDialogTitle(parent, title){
         // 设置title
         var czDialogHeader = document.createElement("div");
-        czDialogHeader.setAttribute("class", 'cz-dialog-header ' + getTextAlign(this.czDialog.settings.headerAlign));
+        czDialogHeader.setAttribute("class", 'cz-dialog-header ' + getTextAlign(that.settings.headerAlign));
         czDialogHeader.innerHTML = title;
         parent.appendChild(czDialogHeader);
     }
@@ -44,7 +45,7 @@ function CZDialog(options){
     function createDialogContent(parent, content){
         // 设置内容
         var czDialogContent = document.createElement("div");
-        czDialogContent.setAttribute("class", 'cz-dialog-content ' + getTextAlign(this.czDialog.settings.contentAlign));
+        czDialogContent.setAttribute("class", 'cz-dialog-content ' + getTextAlign(that.settings.contentAlign));
         czDialogContent.innerHTML = content;
         parent.appendChild(czDialogContent);
     }
@@ -54,7 +55,7 @@ function CZDialog(options){
         if(btnOptions !== undefined && btnOptions instanceof Array){
             // 创建按钮行
             var czDialogButtonRow = document.createElement("div");
-            czDialogButtonRow.setAttribute("class", 'cz-dialog-button-row ' + getTextAlign(this.czDialog.settings.buttonAlign));
+            czDialogButtonRow.setAttribute("class", 'cz-dialog-button-row ' + getTextAlign(that.settings.buttonAlign));
             parent.appendChild(czDialogButtonRow);
             // 添加按钮
             createDialogButtons(czDialogButtonRow, btnOptions);
@@ -93,11 +94,11 @@ function CZDialog(options){
 
     // 按钮事件
     function btnEvent(callBack, isClose){
-        var that = this.czDialog;
+        var dialogThat = that;
         return function(e){
             callBack(that, this);
             if(isClose === undefined || isClose === true){
-                that.close();
+                dialogThat.close();
             }
         }
     };
