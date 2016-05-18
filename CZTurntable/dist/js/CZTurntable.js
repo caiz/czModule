@@ -63,47 +63,16 @@ CZLotteryTurntable.prototype = {
         this.createPointer();
     },
     createBackGroupImage: function(graphics, shapeWidth, shapeHeight){
-        var queue = new createjs.LoadQueue(true);
-        queue.on("fileload", handleFileLoad, this);
-        queue.on("complete", handleComplete, this);
-
-        queue.loadManifest([
-            "dist/images/turntable.jpg"
-        ]);
-        queue.load();
-
-        function handleFileLoad(){
-            console.log("fileload ... ");
-
-        }
-        function handleComplete(){
-            console.log("complete ... ");
-            //console.log(this);
-            //var bitmap = new createjs.Bitmap(this.setting.turntableBgUrl);
-            //var image = bitmap.image;
-            //var scaleY = shapeWidth/image.height;
-            //var scaleX = shapeHeight/image.width;
-            //var matrix2D = new createjs.Matrix2D(scaleX,0,0,scaleY,-this.setting.radius,-this.setting.radius);
-            //
-            //graphics.beginBitmapFill(image, "no-repeat", matrix2D);
-            //graphics.drawCircle(0,0,this.setting.radius);
-            //graphics.x = 0;
-            //graphics.y = 0;
-            //// 获取container
-            //this.container = this.getContainer();
-            //this.container.addChild(circle);
-        }
-
-
-
-
         // 创建背景
         var bitmap = new createjs.Bitmap(this.setting.turntableBgUrl);
         var image = bitmap.image;
         var scaleY = shapeWidth/image.height;
         var scaleX = shapeHeight/image.width;
         var matrix2D = new createjs.Matrix2D(scaleX,0,0,scaleY,-this.setting.radius,-this.setting.radius);
-
+        graphics.beginBitmapFill(image, "no-repeat", matrix2D);
+        graphics.drawCircle(0,0,this.setting.radius);
+        graphics.x = 0;
+        graphics.y = 0;
     },
     getContainer: function(){
         // 创建容器
